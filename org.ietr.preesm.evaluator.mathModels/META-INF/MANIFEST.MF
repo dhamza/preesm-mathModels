@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Math Models plug-in
+Bundle-SymbolicName: org.ietr.preesm.evaluator.mathModels;singleton:=true
+Bundle-Version: 2.2.10.qualifier
+Require-Bundle: org.eclipse.core.runtime,
+ org.ietr.dftools.workflow,
+ org.ietr.dftools.algorithm,
+ org.ietr.preesm.core,
+ org.clojars.gilesc.jgrapht;bundle-version="0.8.2",
+ org.ietr.preesm.algorithm;bundle-version="2.2.10",
+ org.apache.commons.lang3;bundle-version="3.5.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .,
+ lib/gurobi.jar,
+ lib/glpk-java.jar
+Bundle-Vendor: IETR/INSA Rennes
