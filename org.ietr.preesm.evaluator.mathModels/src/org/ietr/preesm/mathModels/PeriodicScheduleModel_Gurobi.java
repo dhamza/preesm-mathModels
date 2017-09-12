@@ -22,9 +22,11 @@ public class PeriodicScheduleModel_Gurobi {
   public Hashtable<String, GRBVar> edgeVar;
 
   /**
+   * Computes the normalized period K of the SDF graph
+   * 
    * @param SDF
    *          graph
-   * @return normalized period. This project contains all the mathematical models used in PREESM project, specially the models solved by Gurobi
+   * @return normalized period.
    * 
    */
   public Fraction computeNormalizedPeriod(SDFGraph SDF) {
@@ -98,7 +100,6 @@ public class PeriodicScheduleModel_Gurobi {
       model.dispose();
       env.dispose();
     } catch (GRBException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     }
 
