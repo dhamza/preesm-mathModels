@@ -1,4 +1,4 @@
-package org.ietr.preesm.mathModels;
+package org.ietr.preesm.evaluator.mathModels;
 
 import gurobi.GRB;
 import gurobi.GRBEnv;
@@ -12,7 +12,6 @@ import org.ietr.dftools.algorithm.model.sdf.SDFAbstractVertex;
 import org.ietr.dftools.algorithm.model.sdf.SDFEdge;
 import org.ietr.dftools.algorithm.model.sdf.SDFGraph;
 import org.ietr.dftools.algorithm.model.sdf.SDFInterfaceVertex;
-import org.ietr.preesm.throughput.helpers.MathFunctionsHelper;
 
 /**
  * @author hderoui

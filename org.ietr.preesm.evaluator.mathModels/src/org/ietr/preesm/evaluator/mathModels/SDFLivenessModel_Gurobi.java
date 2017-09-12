@@ -1,4 +1,4 @@
-package org.ietr.preesm.mathModels;
+package org.ietr.preesm.evaluator.mathModels;
 
 /**
  * @author hderoui
