@@ -12,12 +12,13 @@ import org.ietr.dftools.algorithm.model.sdf.SDFAbstractVertex;
 import org.ietr.dftools.algorithm.model.sdf.SDFEdge;
 import org.ietr.dftools.algorithm.model.sdf.SDFGraph;
 import org.ietr.dftools.algorithm.model.sdf.SDFInterfaceVertex;
+import org.ietr.preesm.mathematicalModels.SolverMethod;
 
 /**
  * @author hderoui
  *
  */
-public class PeriodicScheduleModel_Gurobi {
+public class PeriodicScheduleModel_Gurobi implements SolverMethod {
   public Hashtable<String, GRBVar> edgeVar;
 
   /**
@@ -82,6 +83,10 @@ public class PeriodicScheduleModel_Gurobi {
       for (SDFEdge e : SDF.edgeSet()) {
         double h = (e.getDelay().intValue() - e.getCons().intValue() + MathFunctionsHelper.gcd(e.getProd().intValue(), e.getCons().intValue()))
             * (double) e.getPropertyBean().getValue("normalizationFactor");
+        // System.out.println(e.getSource().getName() + " -> " + e.getTarget().getName() + " (" + e.getDelay().intValue() + " - " + e.getCons().intValue() + " +
+        // "
+        // + MathFunctionsHelper.gcd(e.getProd().intValue(), e.getCons().intValue()) + ")" + " * "
+        // + (double) e.getPropertyBean().getValue("normalizationFactor"));
         expr.addTerm(h, edgeVar.get((String) e.getPropertyBean().getValue("edgeName")));
       }
       model.addConstr(expr, GRB.EQUAL, 1.0, "sumHX");

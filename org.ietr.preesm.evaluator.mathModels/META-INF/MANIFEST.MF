@@ -9,10 +9,15 @@ Require-Bundle: org.eclipse.core.runtime,
  org.ietr.preesm.core,
  org.clojars.gilesc.jgrapht;bundle-version="0.8.2",
  org.ietr.preesm.algorithm;bundle-version="2.2.10",
- org.apache.commons.lang3;bundle-version="3.5.0"
+ org.apache.commons.lang3;bundle-version="3.5.0",
+ org.ietr.preesm.evaluator;bundle-version="2.2.10"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,
  lib/gurobi.jar,
  lib/glpk-java.jar
 Bundle-Vendor: IETR/INSA Rennes
+Export-Package: gurobi,
+ org.ietr.preesm.evaluator.mathModels
+Bundle-Activator: org.ietr.preesm.evaluator.mathModels.MathsModelsPlugin
+Import-Package: org.eclipse.ui
+Bundle-ActivationPolicy: lazy

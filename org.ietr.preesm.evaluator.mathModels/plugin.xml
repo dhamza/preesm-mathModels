@@ -39,5 +39,7 @@
 <?eclipse version="3.4"?>
 
 <plugin>
-
+<extension point="org.eclipse.ui.startup">
+<startup class="org.ietr.preesm.evaluator.mathModels.MathsModelsPlugin"/>
+</extension>
 </plugin>
